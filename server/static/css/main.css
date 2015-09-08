@@ -1,0 +1,65 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
+
+body {
+    font-family: "Open Sans","lucida grande","Segoe UI",arial,verdana,"lucida sans unicode",tahoma,sans-serif;
+    font-size: 13px;
+    color: #3d464d;
+    font-weight: normal;
+}
+
+body #outer-frame {
+    height: 100%;
+    width: 100%;
+}
+
+body #outer-frame #page-content {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    position: relative;
+    transition: all 0.2s ease in out 0s;
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    -moz-transition: all 0.2s ease in out 0s;
+}
+
+body #outer-frame #page-content .top {
+    position: relative;
+    height: 100%;
+    min-height: 650px;
+    margin: 0 auto;
+    width: 882px;
+    padding: 0 54px;
+}
+
+body #outer-frame #page-content .top .console {
+    width: 444px;
+    height: 460px;
+    position: absolute;
+    top: 50%;
+    left: 64px;
+    margin-top: -230px;
+    overflow: hidden;
+}
+
+body #outer-frame #page-content .top .login {
+    margin-top: -169px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    right: 54px;
+    width: 456px;
+    z-index: 7;
+}
+
+body #outer-frame #page-content .top .login .subtitle {
+    font-size: 30px;
+    color: #33536d;
+    margin: 11px 0 24px;
+    line-height: 41px;
+}
+
+body #outer-frame #page-content .top .login .g-signin2 {
+    position: relative;
+    margin: 0 auto;
+    display: inline-block;
+}

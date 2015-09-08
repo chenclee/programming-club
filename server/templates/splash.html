@@ -1,0 +1,37 @@
+<html lang='en'>
+  <head>
+    <link href='/static/css/main.css' type='text/css' rel='stylesheet'>
+    <meta name='google-signin-scope' content='profile email'>
+    <meta name='google-signin-client_id' content='168912103717-ol5cm9u0m4mv292aboadb9arjl59g6to.apps.googleusercontent.com'>
+    <script src='https://apis.google.com/js/platform.js' async defer></script>
+  </head>
+  <body>
+    <div id='outer-frame'>
+      <div id='page-content'>
+        <div class='top'>
+          <div class='console'>
+            <img src='/static/assets/console.png' id='console'>
+          </div>
+          <div class='login'>
+            <img src='/static/assets/longhorn2.png'>
+            <div class='subtitle'>Programming Club</div>
+            <div class='g-signin2' data-onsuccess='onSignIn' data-theme='dark' data-width='225' data-height='45' data-longtitle='true'></div>
+          </div>
+        </div>
+      </div>
+      <noscript><p class='center'>The Playground website requires JavaScript.</p></noscript>
+    </div>
+    <script>
+      function onSignIn(googleUser) {
+        var id_token = googleUser.getAuthResponse().id_token;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'http://localhost:5000/api/v1.0/tokensignin');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function() {
+            window.location.replace('http://localhost:5000/home');
+        };
+        xhr.send('idtoken=' + id_token);
+      };
+    </script>
+  </body>
+</html>
